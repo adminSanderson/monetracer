@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="icon" href="">
+
+</head>
+<body>
+    <aside style="max-height: 1000px;">
+        <img  src="{% static 'main/image/moneyFinak.png' %}" alt="MoneyTracer">
+        <span class="logo">MoneyTracer</span>
+         <h3>Навигация</h3>
+
+        <ul>
+            <a style="text-decoration: none; " href="{% url 'index' %}"><li>Главная</li></a>
+            <a style="text-decoration: none;" href="{% url 'about' %}"><li>О нас</li></a>
+            <a style="text-decoration: none;" href="{% url 'analytics' %}"><li>Аналитика</li></a>
+            <a style="text-decoration: none;" href="{% url 'iapp_home' %}"><li>Трекер</li></a>
+            <a style="text-decoration: none; " href="./reg.html"><li>Регистрация/Вход</li></a>
+            <a style="text-decoration: none; " href="{%  url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Добавить запись</button></li></a>
+        </ul>
+
+        <p style="font-size: medium; text-align:left;margin-top: 140px;margin-left: 5px">©MoneyTracer, 2018—2023</p>
+    </aside>
+    <main>
+    {% block content %}
+    {% endblock %}
+    </main>
+
+</body>
+</html>

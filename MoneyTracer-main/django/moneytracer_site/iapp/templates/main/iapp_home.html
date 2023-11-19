@@ -1,0 +1,28 @@
+{% extends 'main/load.html' %}
+
+{% block title %}денежный трекер{% endblock %}
+
+
+{% block content %}
+
+
+
+<div>
+
+    <section style="width:50%; height: 200px;margin-top: 50px"class="blocks">
+    <h1 style="margin-left: 100px; margin-top:10px; font-size: 50px"><b>Moneytracer</b></h1>
+
+    {% for el in iapp %}
+        <div class="alert alert-warning">
+            <h3>{{ el.title_expenses }}</h3>
+            <p>Сумма: {{ el.expenses_num }}</p>
+            <p>Дата: {{ el.date }}</p>
+        </div>
+    {% endfor %}
+    </section>
+</div>
+
+
+
+
+{% endblock %}
